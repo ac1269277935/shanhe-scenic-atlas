@@ -1,0 +1,153 @@
+/* Local travel atlas: warm paper, botanical greens, cinnabar bookmarks. */
+:root{
+  color-scheme:light dark;
+  --atlas-paper:light-dark(#f4f3ed,#171e1b);
+  --atlas-surface:light-dark(#fffefa,#202a25);
+  --atlas-soft:light-dark(#efF2eb,#28352d);
+  --atlas-ink:light-dark(#253d32,#e1e9de);
+  --atlas-muted:light-dark(#68776c,#a5b4a6);
+  --atlas-line:light-dark(#dde3d8,#3b4a3e);
+  --atlas-brand:light-dark(#315c46,#b0cfac);
+  --atlas-brand-soft:light-dark(#e5eee1,#344536);
+  --atlas-mark:light-dark(#b9573d,#eba58d);
+  --atlas-mark-soft:light-dark(#f8e9e1,#49352d);
+  --atlas-land:light-dark(#dee7d8,#384b3b);
+  --atlas-boundary:light-dark(#b7c8b2,#536b55);
+  --atlas-water:light-dark(#f7f8f1,#243028);
+  --atlas-grid:light-dark(#c7d3bf,#567052);
+  --atlas-shadow:light-dark(#2943320b,#00000025);
+  --atlas-deep:#244835;
+  --atlas-cream:#f5f3e7;
+  --atlas-serif:"Noto Serif SC","Source Han Serif SC","Songti SC","SimSun",serif;
+}
+html:root{--background:var(--atlas-paper);background:var(--atlas-paper)}
+html>body{margin:0;padding:0;background:var(--atlas-paper);min-width:320px}
+#china-five-a-map{
+  --foreground:var(--atlas-ink);--background:var(--atlas-water);--muted:var(--atlas-land);
+  --border:var(--atlas-boundary);--secondary:var(--atlas-brand-soft);--popover:var(--atlas-surface);
+  --popover-foreground:var(--atlas-ink);
+  --viz-series-1:light-dark(#386f4c,#93be8e);--viz-series-2:light-dark(#428694,#81bbc5);
+  --viz-series-3:light-dark(#ba8850,#d8b574);--viz-series-4:light-dark(#916da4,#bc9ccd);
+  --viz-series-5:light-dark(#b85644,#e59682);--viz-series-6:light-dark(#558b7c,#91c1b4);
+  width:100%;max-width:1512px;margin:0 auto;padding:0 40px 28px;color:var(--atlas-ink);
+  font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;font-size:14px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+#china-five-a-map,#china-five-a-map *{box-sizing:border-box}
+#china-five-a-map h1,#china-five-a-map h2,#china-five-a-map h3,#china-five-a-map p{margin:0}
+#china-five-a-map a{color:var(--atlas-brand);text-decoration:none;text-underline-offset:4px}
+#china-five-a-map a:hover{text-decoration:underline}
+#china-five-a-map :focus-visible{outline:2px solid var(--atlas-mark);outline-offset:4px}
+#china-five-a-map .small{font-size:12px;color:var(--atlas-muted)}
+#china-five-a-map .eyebrow{font-size:10px;letter-spacing:2.2px;font-weight:600;color:var(--atlas-muted)}
+#china-five-a-map .masthead{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:86px;border-bottom:1px solid var(--atlas-line)}
+#china-five-a-map .brand{display:flex;gap:13px;align-items:center}
+#china-five-a-map .brand-seal{width:39px;height:44px;display:grid;place-content:center;line-height:1.1;padding:4px 0;color:var(--atlas-mark);border:1.5px solid currentColor;border-radius:3px;font-family:var(--atlas-serif);font-size:18px;letter-spacing:2px;transform:rotate(-4deg)}
+#china-five-a-map .brand-title{display:block;font-family:var(--atlas-serif);font-size:22px;letter-spacing:3px;font-weight:600}
+#china-five-a-map .brand-subtitle{font-size:10px;letter-spacing:2.2px;color:var(--atlas-muted)}
+#china-five-a-map .masthead-note{display:flex;align-items:center;gap:8px;font-size:12px;letter-spacing:1px;color:var(--atlas-muted)}
+#china-five-a-map .live-dot{width:6px;height:6px;display:inline-block;flex:none;border-radius:50%;background:var(--atlas-brand)}
+#china-five-a-map .hero{display:flex;justify-content:space-between;align-items:center;gap:32px;padding:30px 0 28px}
+#china-five-a-map .hero h1{font-family:var(--atlas-serif);font-size:clamp(27px,2.6vw,39px);font-weight:500;line-height:1.4;letter-spacing:2px}
+#china-five-a-map .hero h1 em{font-style:normal;color:var(--atlas-brand)}
+#china-five-a-map .hero p{margin-top:9px;font-size:13px;color:var(--atlas-muted);letter-spacing:.5px}
+#china-five-a-map .hero-index{display:flex;gap:17px;align-items:center;padding-left:28px;border-left:1px solid var(--atlas-line);flex:none}
+#china-five-a-map .hero-index strong{font-family:Georgia,"Times New Roman",serif;font-size:54px;line-height:1;font-weight:400;letter-spacing:-2px;color:var(--atlas-brand)}
+#china-five-a-map .hero-index span{font-size:12px;line-height:1.8}
+#china-five-a-map .hero-index small{display:block;font-size:10px;letter-spacing:1px;color:var(--atlas-muted)}
+#china-five-a-map .filters{display:grid;grid-template-columns:1fr 1.12fr 1fr 1.04fr 1.4fr;gap:18px;margin:0 0 24px;padding:20px 22px;background:var(--atlas-surface);border:1px solid var(--atlas-line);border-radius:14px;box-shadow:0 3px 16px var(--atlas-shadow)}
+#china-five-a-map .field{display:flex;flex-direction:column;gap:7px;min-width:0;font-size:11px;font-weight:500;letter-spacing:.5px;color:var(--atlas-muted)}
+#china-five-a-map .field-label{display:flex;justify-content:space-between;align-items:center;gap:8px}
+#china-five-a-map .field-number{font-size:9px;letter-spacing:1px;opacity:.65}
+#china-five-a-map .control{appearance:none;display:block;width:100%;min-width:0;min-height:42px;padding:9px 13px;border:1px solid var(--atlas-line);border-radius:8px;background:var(--atlas-surface);color:var(--atlas-ink);font-family:inherit;font-size:13px;font-weight:400;line-height:1.5;letter-spacing:0;box-shadow:none;transition:border-color .15s,background .15s}
+#china-five-a-map select.control{padding-right:29px;cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,var(--atlas-muted) 50%),linear-gradient(135deg,var(--atlas-muted) 50%,transparent 50%);background-position:calc(100% - 16px) 18px,calc(100% - 12px) 18px;background-size:4px 4px;background-repeat:no-repeat}
+#china-five-a-map .control:hover{border-color:var(--atlas-boundary)}
+#china-five-a-map .control:focus{border-color:var(--atlas-brand)}
+#china-five-a-map .control:disabled{opacity:.55;cursor:default}
+#china-five-a-map .control::placeholder{color:var(--atlas-muted);opacity:.8}
+#china-five-a-map .mark-field .control{background-color:var(--atlas-brand-soft);border-color:transparent;color:var(--atlas-brand)}
+#china-five-a-map .search-wrap{position:relative}
+#china-five-a-map .search-wrap .control{padding-left:35px}
+#china-five-a-map .search-icon{position:absolute;left:13px;top:13px;width:13px;height:13px;border:1.5px solid var(--atlas-muted);border-radius:50%;pointer-events:none}
+#china-five-a-map .search-icon:after{content:"";position:absolute;width:5px;height:1.5px;right:-4px;bottom:-2px;background:var(--atlas-muted);transform:rotate(45deg)}
+#china-five-a-map .atlas-layout{display:grid;grid-template-columns:minmax(0,1fr) 324px;align-items:start;gap:22px}
+#china-five-a-map .map-panel{min-width:0;background:var(--atlas-water);border:1px solid var(--atlas-line);border-radius:16px;overflow:hidden;box-shadow:0 7px 24px var(--atlas-shadow)}
+#china-five-a-map .map-panel-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:13px;padding:19px 23px 15px}
+#china-five-a-map .map-title{display:flex;align-items:center;gap:10px}
+#china-five-a-map .map-title h2{font-size:15px;letter-spacing:1px;font-weight:600}
+#china-five-a-map .map-title .eyebrow{font-size:9px;letter-spacing:1.5px}
+#china-five-a-map .quick-toggle{display:flex;align-items:center;gap:7px;color:var(--atlas-muted);font-size:11px;cursor:pointer;padding:5px 0}
+#china-five-a-map .quick-toggle input{appearance:auto;margin:0;width:15px;height:15px;accent-color:var(--atlas-brand);cursor:pointer}
+#china-five-a-map .map-stage{position:relative;width:100%;background:radial-gradient(ellipse at 40% 42%,var(--atlas-surface),var(--atlas-water) 70%)}
+#china-five-a-map .china-map{display:block;width:100%;touch-action:none;overflow:hidden}
+#china-five-a-map .china-map text{fill:var(--atlas-ink);font-family:inherit;font-size:11px;font-weight:400}
+#china-five-a-map .province{fill:var(--atlas-land);stroke:var(--atlas-boundary);stroke-width:.8;vector-effect:non-scaling-stroke}
+#china-five-a-map .province.active{fill:var(--atlas-brand-soft);stroke:var(--atlas-brand)}
+#china-five-a-map .graticule{fill:none;stroke:var(--atlas-grid);stroke-width:.6;opacity:.3;pointer-events:none;vector-effect:non-scaling-stroke}
+#china-five-a-map .mark{stroke:var(--atlas-water);stroke-width:1;cursor:pointer}
+#china-five-a-map .bookmark-ring{stroke:var(--atlas-mark)}
+#china-five-a-map .compass{position:absolute;left:26px;top:7px;display:grid;justify-items:center;gap:3px;font-family:Georgia,serif;color:var(--atlas-muted);font-size:11px;pointer-events:none}
+#china-five-a-map .compass:after{content:"";width:1px;height:29px;background:var(--atlas-boundary)}
+#china-five-a-map .compass:before{content:"";position:absolute;top:18px;border-left:3px solid transparent;border-right:3px solid transparent;border-bottom:8px solid var(--atlas-muted)}
+#china-five-a-map .map-toolbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:10px 23px 16px}
+#china-five-a-map .map-count{color:var(--atlas-muted);font-size:11px;font-variant-numeric:tabular-nums}
+#china-five-a-map .map-actions{display:flex;align-items:center;gap:7px}
+#china-five-a-map .atlas-button{appearance:none;display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:36px;padding:8px 13px;border:1px solid var(--atlas-line);border-radius:8px;font-family:inherit;font-size:12px;font-weight:500;line-height:1.4;background:var(--atlas-surface);color:var(--atlas-ink);cursor:pointer;transition:background .15s,border-color .15s,transform .15s;white-space:normal;text-align:center}
+#china-five-a-map .atlas-button:hover{background:var(--atlas-brand-soft);border-color:var(--atlas-boundary)}
+#china-five-a-map .atlas-button:active{transform:translateY(1px)}
+#china-five-a-map .zoom-button{width:35px;padding:6px;font-size:17px;font-weight:400}
+#china-five-a-map .reset-button{border-color:transparent;background:transparent;color:var(--atlas-brand);padding-right:0}
+#china-five-a-map .legend{display:flex;gap:10px 16px;flex-wrap:wrap;padding:15px 23px;border-top:1px solid var(--atlas-line);background:var(--atlas-surface);font-size:11px;color:var(--atlas-muted)}
+#china-five-a-map .legend-item{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+#china-five-a-map .dot-key{width:14px;height:14px;flex:none}
+#china-five-a-map .mark-feedback{display:flex;align-items:flex-start;gap:8px;min-height:44px;padding:13px 5px 0;color:var(--atlas-muted);font-size:11px;line-height:1.7}
+#china-five-a-map .mark-feedback:before{content:"";width:5px;height:5px;background:var(--atlas-brand);border-radius:50%;flex:none;margin-top:7px}
+#china-five-a-map .hover-label{position:absolute;left:72px;top:4px;max-width:calc(100% - 90px);background:var(--atlas-surface);color:var(--atlas-ink);padding:10px 14px;border:1px solid var(--atlas-line);border-radius:9px;box-shadow:0 8px 24px var(--atlas-shadow);pointer-events:none;display:none;font-size:12px;z-index:2}
+#china-five-a-map .hover-label strong{display:block;font-size:12px;font-weight:600}
+#china-five-a-map .hover-label span{display:block;font-size:11px;color:var(--atlas-muted);margin-top:3px}
+#china-five-a-map .detail-area{min-width:0;background:var(--atlas-surface);border:1px solid var(--atlas-line);border-radius:16px;overflow:hidden;box-shadow:0 7px 24px var(--atlas-shadow)}
+#china-five-a-map .detail-masthead{position:relative;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:24px;color:var(--atlas-cream);background:var(--atlas-deep);overflow:hidden}
+#china-five-a-map .detail-masthead:after{content:"";width:210px;height:210px;position:absolute;right:-65px;top:-144px;border:1px solid #e4eac329;border-radius:50%;box-shadow:0 0 0 16px #e4eac30b,0 0 0 35px #e4eac30b,0 0 0 58px #e4eac308;pointer-events:none}
+#china-five-a-map .detail-masthead h2{font-family:var(--atlas-serif);font-weight:500;font-size:23px;letter-spacing:3px;line-height:1.4}
+#china-five-a-map .detail-masthead p{font-family:Georgia,serif;letter-spacing:2px;font-size:9px;opacity:.65;margin-top:4px}
+#china-five-a-map .grade-stamp{display:flex;flex-direction:column;align-items:center;justify-content:center;width:47px;height:53px;border:1px solid #e4eac378;border-radius:24px 24px 4px 4px;font-family:Georgia,serif;line-height:1.1;font-size:21px;color:#e8dca9;transform:rotate(6deg);flex:none}
+#china-five-a-map .grade-stamp small{font-size:7px;letter-spacing:1.5px;margin-top:4px}
+#china-five-a-map .place-picker{padding:20px 22px 0}
+#china-five-a-map .place-picker .control{background-color:var(--atlas-soft);border-color:transparent;font-size:12px}
+#china-five-a-map .detail-content{padding:23px 22px 24px}
+#china-five-a-map .destination-kicker{display:flex;align-items:center;justify-content:space-between;gap:10px;color:var(--atlas-muted);font-size:11px;margin-bottom:12px}
+#china-five-a-map .type-label{display:inline-flex;align-items:center;gap:6px}
+#china-five-a-map .destination-number{font-family:Georgia,serif;letter-spacing:1px;font-size:10px;opacity:.7}
+#china-five-a-map .detail-heading h3{font-family:var(--atlas-serif);font-size:27px;line-height:1.55;font-weight:500;letter-spacing:1px;overflow-wrap:anywhere}
+#china-five-a-map .destination-location{margin:7px 0 18px;font-size:12px;color:var(--atlas-muted);letter-spacing:1px}
+#china-five-a-map .metadata{display:grid;grid-template-columns:1.25fr 1fr;gap:12px;padding:16px 0;border-top:1px solid var(--atlas-line);border-bottom:1px solid var(--atlas-line)}
+#china-five-a-map .metadata dt{font-size:10px;color:var(--atlas-muted);margin-bottom:5px;letter-spacing:.5px}
+#china-five-a-map .metadata dd{font-family:Georgia,"Microsoft YaHei",serif;font-size:16px;font-variant-numeric:tabular-nums;margin:0;line-height:1.7}
+#china-five-a-map .first-batch{font-family:inherit;font-size:9px;background:var(--atlas-brand-soft);color:var(--atlas-brand);border-radius:3px;padding:2px 4px;vertical-align:2px;white-space:nowrap}
+#china-five-a-map .intro-heading{font-size:10px;letter-spacing:1.5px;color:var(--atlas-muted);margin:19px 0 8px}
+#china-five-a-map .detail-intro{font-size:13px;line-height:1.95;color:var(--atlas-ink);text-align:justify}
+#china-five-a-map .detail-note{font-size:11px;line-height:1.8;color:var(--atlas-muted);margin-top:12px}
+#china-five-a-map .bookmark-button{width:100%;min-height:44px;margin-top:24px;background:var(--atlas-deep);border-color:var(--atlas-deep);color:var(--atlas-cream);font-size:13px;letter-spacing:1px}
+#china-five-a-map .bookmark-button:hover{background:#39634a;border-color:#39634a}
+#china-five-a-map .bookmark-button[aria-pressed=true]{background:var(--atlas-mark-soft);border-color:var(--atlas-mark-soft);color:var(--atlas-mark)}
+#china-five-a-map .bookmark-button[aria-pressed=true]:hover{border-color:var(--atlas-mark)}
+#china-five-a-map .detail-source-links{display:flex;flex-wrap:wrap;gap:9px 12px;margin-top:18px;font-size:10px;color:var(--atlas-muted)}
+#china-five-a-map .detail-source-links a{color:var(--atlas-muted)}
+#china-five-a-map .empty{padding:32px 0;color:var(--atlas-muted);font-size:13px;line-height:1.9}
+#china-five-a-map .bottom-notes{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:15px}
+#china-five-a-map .note-section{border-top:1px solid var(--atlas-line);min-width:0}
+#china-five-a-map .note-section summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:15px;padding:17px 0;font-size:12px;letter-spacing:.5px}
+#china-five-a-map .note-section summary::-webkit-details-marker{display:none}
+#china-five-a-map .note-section summary:after{content:"＋";font-size:15px;color:var(--atlas-muted)}
+#china-five-a-map .note-section[open] summary:after{content:"−"}
+#china-five-a-map .note-section p{font-size:11px;line-height:1.9;color:var(--atlas-muted);margin:0 0 11px}
+#china-five-a-map .mark-actions{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0}
+#china-five-a-map .source-links{display:flex;flex-wrap:wrap;gap:7px 13px}
+#china-five-a-map .page-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid var(--atlas-line);padding-top:20px;margin-top:15px;font-size:10px;letter-spacing:1px;color:var(--atlas-muted)}
+#china-five-a-map .page-footer .footer-phrase{font-family:var(--atlas-serif);font-size:12px;letter-spacing:2px}
+@media(min-width:1600px){#china-five-a-map .atlas-layout{grid-template-columns:minmax(0,1fr) 348px}}
+@media(max-width:1180px){#china-five-a-map{padding:0 26px 24px}#china-five-a-map .atlas-layout{grid-template-columns:minmax(0,1fr) 294px;gap:18px}#china-five-a-map .filters{gap:12px;padding:18px}#china-five-a-map .map-title .eyebrow{display:none}#china-five-a-map .hero-index strong{font-size:46px}#china-five-a-map .detail-heading h3{font-size:24px}#china-five-a-map .detail-content{padding:20px}#china-five-a-map .place-picker{padding:18px 20px 0}}
+@media(max-width:930px){#china-five-a-map .atlas-layout{grid-template-columns:minmax(0,1fr)}#china-five-a-map .filters{grid-template-columns:repeat(4,minmax(0,1fr))}#china-five-a-map .search-field{grid-column:1/-1}#china-five-a-map .hero-index{display:none}#china-five-a-map .detail-content{padding:23px}#china-five-a-map .detail-heading h3{font-size:28px}#china-five-a-map .detail-intro{max-width:65ch}#china-five-a-map .metadata{grid-template-columns:1fr 1fr}#china-five-a-map .bookmark-button{width:auto;min-width:220px}#china-five-a-map .detail-masthead{padding:19px 23px}#china-five-a-map .grade-stamp{height:45px;width:41px}}
+@media(max-width:600px){#china-five-a-map{padding:0 16px 22px}#china-five-a-map .masthead{min-height:73px}#china-five-a-map .brand-title{font-size:19px;letter-spacing:2px}#china-five-a-map .brand-subtitle{font-size:8px;letter-spacing:1.5px}#china-five-a-map .brand-seal{width:32px;height:37px;font-size:15px}#china-five-a-map .masthead-note{font-size:10px;letter-spacing:0}#china-five-a-map .hero{padding:25px 0 22px}#china-five-a-map .hero h1{font-size:27px;letter-spacing:1px}#china-five-a-map .hero p{font-size:11px;line-height:1.9;max-width:29em}#china-five-a-map .filters{grid-template-columns:repeat(2,minmax(0,1fr));padding:16px;gap:15px 12px;margin-bottom:18px;border-radius:12px}#china-five-a-map .control{font-size:14px;min-height:44px}#china-five-a-map select.control{background-position:calc(100% - 16px) 19px,calc(100% - 12px) 19px}#china-five-a-map .search-icon{top:14px}#china-five-a-map .map-panel-head{padding:16px 16px 9px;gap:6px}#china-five-a-map .map-title h2{font-size:13px}#china-five-a-map .quick-toggle{font-size:10px;gap:5px}#china-five-a-map .compass{left:18px}#china-five-a-map .map-toolbar{padding:8px 15px 15px;gap:9px}#china-five-a-map .map-count{font-size:10px}#china-five-a-map .legend{padding:14px 15px;gap:9px 13px;font-size:10px}#china-five-a-map .atlas-layout{gap:14px}#china-five-a-map .bottom-notes{grid-template-columns:1fr;gap:0;margin-top:22px}#china-five-a-map .detail-heading h3{font-size:27px}#china-five-a-map .bookmark-button{width:100%}#china-five-a-map .hover-label{left:52px;max-width:calc(100% - 63px);padding:8px 10px}#china-five-a-map .page-footer{font-size:9px;letter-spacing:.4px}#china-five-a-map .footer-phrase{display:none}}
+@media(pointer:coarse){#china-five-a-map .atlas-button{min-height:44px}#china-five-a-map .zoom-button{width:44px}#china-five-a-map .control{font-size:16px;min-height:46px}#china-five-a-map .quick-toggle{min-height:44px}#china-five-a-map .quick-toggle input{width:18px;height:18px}}
+@media(prefers-reduced-motion:reduce){#china-five-a-map *{transition:none!important}}

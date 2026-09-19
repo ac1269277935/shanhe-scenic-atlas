@@ -1,0 +1,87 @@
+/* Tactile surfaces, spatial feedback, and accessible motion. */
+:root{--atlas-land-top:light-dark(#e6eddd,#486048);--atlas-land-bottom:light-dark(#c9d9bd,#314830);--atlas-depth:light-dark(#a6b999,#1b2c1d);--atlas-elevated-shadow:light-dark(#28432b18,#00000040);--atlas-bevel:light-dark(#ffffffcc,#b8d4b01f)}
+#china-five-a-map{--atlas-ease:cubic-bezier(.22,1,.36,1);background:radial-gradient(ellipse at 8% 12%,light-dark(#e2eac542,#6478540b),transparent 35%)}
+#china-five-a-map .filters{grid-template-columns:1fr 1.16fr 1fr 1.65fr;margin-bottom:18px;position:relative;z-index:5;box-shadow:inset 0 1px 0 var(--atlas-bevel),0 3px 5px var(--atlas-shadow),0 14px 30px var(--atlas-shadow)}
+#china-five-a-map .map-panel,#china-five-a-map .detail-area{border-radius:19px;box-shadow:inset 0 1px 0 var(--atlas-bevel),0 3px 3px var(--atlas-shadow),0 14px 32px var(--atlas-elevated-shadow),0 2px 0 var(--atlas-line);transition:box-shadow .3s var(--atlas-ease)}
+#china-five-a-map .detail-area{position:sticky;top:20px}
+#china-five-a-map .map-panel-head{background:linear-gradient(180deg,var(--atlas-surface),transparent)}
+#china-five-a-map .map-stage{background:radial-gradient(ellipse at 42% 37%,var(--atlas-surface),var(--atlas-water) 65%)}
+#china-five-a-map .province{fill:url(#c5a-land-gradient);stroke-width:.85}
+#china-five-a-map .province.active{fill:var(--atlas-brand-soft);stroke:var(--atlas-brand);stroke-width:1.15}
+#china-five-a-map .land-depth{fill:var(--atlas-depth);stroke:var(--atlas-depth);stroke-width:1;vector-effect:non-scaling-stroke;pointer-events:none}
+#china-five-a-map .land-shadow{fill:light-dark(#71876322,#00000038);pointer-events:none}
+#china-five-a-map .map-toolbar{padding-top:16px}
+#china-five-a-map .map-actions{padding:5px;border:1px solid var(--atlas-line);background:var(--atlas-surface);border-radius:12px;box-shadow:0 4px 10px var(--atlas-shadow)}
+#china-five-a-map .map-actions .zoom-button{border-color:transparent;background:transparent}
+#china-five-a-map .zoom-level{font-variant-numeric:tabular-nums;font-size:11px;min-width:36px;text-align:center;color:var(--atlas-muted)}
+#china-five-a-map .map-actions .reset-button{padding:8px 10px;border-left:1px solid var(--atlas-line);border-radius:0}
+#china-five-a-map .gesture-hint{display:block;font-size:10px;color:var(--atlas-muted);opacity:.85;margin-top:4px}
+#china-five-a-map .atlas-button{box-shadow:inset 0 1px 0 var(--atlas-bevel),0 2px 3px var(--atlas-shadow);transition:background .18s,border-color .18s,box-shadow .2s,transform .22s var(--atlas-ease)}
+#china-five-a-map .atlas-button:hover{transform:translateY(-2px);box-shadow:inset 0 1px 0 var(--atlas-bevel),0 5px 10px var(--atlas-elevated-shadow)}
+#china-five-a-map .atlas-button:active{transform:translateY(1px);box-shadow:inset 0 1px 3px var(--atlas-shadow)}
+#china-five-a-map button:disabled{opacity:.4;cursor:default;transform:none;box-shadow:none}
+#china-five-a-map .bookmark-button{background:linear-gradient(155deg,#3f6b4e,#244835);box-shadow:inset 0 1px 0 #ffffff26,0 5px 0 light-dark(#1b392b,#15291f),0 10px 17px var(--atlas-elevated-shadow);border-color:transparent;min-height:46px}
+#china-five-a-map .bookmark-button:hover{background:linear-gradient(155deg,#4c7c5d,#2b513b);transform:translateY(-2px)}
+#china-five-a-map .bookmark-button:active{transform:translateY(3px);box-shadow:0 1px 0 #1b392b}
+#china-five-a-map .bookmark-button[aria-pressed=true]{background:var(--atlas-mark-soft);box-shadow:inset 0 1px 0 var(--atlas-bevel),0 3px 0 color-mix(in srgb,var(--atlas-mark) 25%,var(--atlas-mark-soft)),0 7px 13px var(--atlas-shadow)}
+#china-five-a-map .header-actions{display:flex;align-items:center;gap:18px}
+#china-five-a-map .motion-toggle{font-size:11px;min-height:31px;padding:5px 9px;border-radius:20px;box-shadow:none;color:var(--atlas-muted);background:transparent}
+#china-five-a-map .motion-toggle:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--atlas-muted)}
+#china-five-a-map .motion-toggle[aria-pressed=true]:before{background:var(--atlas-brand);box-shadow:0 0 0 3px var(--atlas-brand-soft)}
+#china-five-a-map .explore-bar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:17px}
+#china-five-a-map .mark-segments{display:grid;grid-template-columns:repeat(3,1fr);position:relative;padding:4px;background:light-dark(#e6eadf,#283629);border:1px solid var(--atlas-line);border-radius:12px;box-shadow:inset 0 2px 4px var(--atlas-shadow);width:340px;max-width:100%}
+#china-five-a-map .segment-indicator{position:absolute;left:4px;top:4px;bottom:4px;width:calc((100% - 8px)/3);background:var(--atlas-surface);border-radius:8px;box-shadow:0 2px 4px var(--atlas-elevated-shadow);pointer-events:none;transition:transform .35s var(--atlas-ease)}
+#china-five-a-map .mark-segments button{position:relative;z-index:1;min-width:0;border:0;background:transparent;border-radius:8px;padding:9px 7px;min-height:38px;font-family:inherit;font-size:12px;font-weight:500;line-height:1.4;color:var(--atlas-muted);cursor:pointer;white-space:nowrap}
+#china-five-a-map .mark-segments button[aria-pressed=true]{color:var(--atlas-brand);font-weight:600}
+#china-five-a-map .mark-segments button span{font-family:Georgia,serif;font-size:11px;opacity:.8;margin-left:5px}
+#china-five-a-map .filter-summary{display:flex;gap:14px;align-items:center;font-size:11px;color:var(--atlas-muted)}
+#china-five-a-map .text-button{appearance:none;background:transparent;border:0;padding:5px 0;color:var(--atlas-brand);font-family:inherit;font-size:11px;cursor:pointer;line-height:1.6;text-underline-offset:4px}
+#china-five-a-map .text-button:hover{text-decoration:underline}
+#china-five-a-map .filter-chips{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0 0 17px}
+#china-five-a-map .filter-chip{font-family:inherit;font-size:11px;border:1px solid var(--atlas-line);background:var(--atlas-surface);color:var(--atlas-ink);padding:5px 9px;border-radius:7px;cursor:pointer;display:inline-flex;gap:10px;align-items:center;box-shadow:0 2px 4px var(--atlas-shadow);max-width:100%;overflow-wrap:anywhere}
+#china-five-a-map .filter-chip:hover{border-color:var(--atlas-mark);color:var(--atlas-mark)}
+#china-five-a-map .search-field{position:relative}
+#china-five-a-map kbd{font-family:inherit;font-size:10px;line-height:1.5;min-width:19px;text-align:center;border:1px solid var(--atlas-line);border-radius:4px;box-shadow:0 1px 0 var(--atlas-line);padding:0 5px;color:var(--atlas-muted)}
+#china-five-a-map .legend:before{content:"点选筛选";font-size:10px;color:var(--atlas-muted);align-self:center;margin-right:1px}
+#china-five-a-map .search-wrap .control{padding-right:35px}
+#china-five-a-map input[type=search]::-webkit-search-cancel-button{appearance:none}
+#china-five-a-map .search-clear{position:absolute;right:8px;top:6px;border:0;border-radius:6px;width:29px;height:30px;background:transparent;color:var(--atlas-muted);font-size:20px;cursor:pointer}
+#china-five-a-map .search-clear:hover{background:var(--atlas-brand-soft)}
+#china-five-a-map .search-results{position:absolute;top:calc(100% + 9px);left:0;right:0;min-width:0;padding:6px;border:1px solid var(--atlas-line);border-radius:11px;background:var(--atlas-surface);box-shadow:0 15px 36px var(--atlas-elevated-shadow);z-index:10}
+#china-five-a-map .search-result{padding:10px;border-radius:7px;cursor:pointer;outline:none;line-height:1.6;display:flex;gap:9px;align-items:flex-start;font-size:12px;letter-spacing:0;color:var(--atlas-ink);font-weight:400}
+#china-five-a-map .search-result .dot-key{margin-top:4px}
+#china-five-a-map .search-result small{display:block;color:var(--atlas-muted);font-size:10px;margin-top:2px}
+#china-five-a-map .search-result[aria-selected=true],#china-five-a-map .search-result:hover{background:var(--atlas-brand-soft)}
+#china-five-a-map .search-result mark{background:var(--atlas-mark-soft);color:var(--atlas-mark);border-radius:2px}
+#china-five-a-map .search-tip{font-size:10px;font-weight:400;color:var(--atlas-muted);padding:7px 10px;border-top:1px solid var(--atlas-line)}
+#china-five-a-map .destination-nav{display:flex;align-items:center;gap:9px;margin:12px 22px 0;padding-bottom:15px;border-bottom:1px solid var(--atlas-line)}
+#china-five-a-map .destination-nav>.atlas-button{width:31px;min-height:30px;padding:4px;border-radius:7px}
+#china-five-a-map #c5a-place-position{min-width:55px;text-align:center;font-size:10px;color:var(--atlas-muted);font-variant-numeric:tabular-nums}
+#china-five-a-map .locate-button{margin-left:auto}
+#china-five-a-map .detail-content{padding-top:18px}
+#china-five-a-map .detail-masthead{background:radial-gradient(ellipse at 5% 0%,#62805670,transparent 60%),linear-gradient(125deg,#315942,#1f3d2d);box-shadow:inset 0 1px 0 #ffffff24,0 2px 6px var(--atlas-elevated-shadow)}
+#china-five-a-map .grade-stamp{box-shadow:0 3px 6px #102a2640,inset 0 1px 0 #ffffee22;background:#d4d39e09}
+#china-five-a-map .legend-item{border:0;background:transparent;padding:3px 5px;margin:-3px -5px;font:inherit;cursor:pointer;border-radius:5px;color:var(--atlas-muted);transition:opacity .18s,background .18s,transform .2s}
+#china-five-a-map .legend-item:hover{background:var(--atlas-brand-soft);transform:translateY(-1px)}
+#china-five-a-map .legend-item[aria-pressed=true]{color:var(--atlas-brand);background:var(--atlas-brand-soft)}
+#china-five-a-map .legend.is-filtered .legend-item[aria-pressed=false]{opacity:.5}
+#china-five-a-map .mobile-detail-link,#china-five-a-map .mobile-back-map{display:none}
+#china-five-a-map .action-toast{position:fixed;bottom:max(24px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:12px;max-width:min(560px,calc(100vw - 30px));width:max-content;padding:14px 17px;background:var(--atlas-deep);color:var(--atlas-cream);border:1px solid #ffffff28;border-radius:13px;box-shadow:0 8px 30px #16312240,inset 0 1px 0 #ffffff21;z-index:30;font-size:12px;line-height:1.6}
+#china-five-a-map .toast-check{display:grid;place-items:center;background:#ffffff1c;border-radius:50%;width:24px;height:24px;flex:none;color:#d3e6ad}
+#china-five-a-map #c5a-toast-message{overflow-wrap:anywhere;min-width:0}
+#china-five-a-map .action-toast button{flex:none;border:0;background:transparent;color:#e9ddb1;font-family:inherit;font-size:12px;cursor:pointer;white-space:nowrap;padding:6px}
+#china-five-a-map #c5a-dismiss-toast{color:var(--atlas-cream);font-size:18px;opacity:.65}
+#china-five-a-map [hidden]{display:none!important}
+#china-five-a-map[data-intro=true][data-motion=on] .hero{animation:atlas-arrive .55s var(--atlas-ease) both}
+#china-five-a-map[data-intro=true][data-motion=on] .filters{animation:atlas-arrive .6s .06s var(--atlas-ease) both}
+#china-five-a-map[data-intro=true][data-motion=on] .atlas-layout{animation:atlas-arrive .7s .12s var(--atlas-ease) both}
+#china-five-a-map[data-motion=on] .search-results{animation:atlas-menu .2s var(--atlas-ease) both}
+#china-five-a-map[data-motion=on] .action-toast{animation:atlas-toast .35s var(--atlas-ease) both}
+#china-five-a-map[data-motion=off] *,#china-five-a-map[data-motion=off] *:before,#china-five-a-map[data-motion=off] *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+@keyframes atlas-arrive{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes atlas-menu{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+@keyframes atlas-toast{from{opacity:0;transform:translate(-50%,12px) scale(.97)}to{opacity:1;transform:translate(-50%,0) scale(1)}}
+@media(max-width:1180px){#china-five-a-map .filters{grid-template-columns:1fr 1.13fr 1fr 1.5fr}#china-five-a-map .destination-nav{margin-left:20px;margin-right:20px;gap:5px}#china-five-a-map .gesture-hint{font-size:9px}}
+@media(max-width:930px){#china-five-a-map .filters{grid-template-columns:repeat(3,minmax(0,1fr))}#china-five-a-map .search-field{grid-column:1/-1}#china-five-a-map .detail-area{position:static;scroll-margin-top:20px}#china-five-a-map .map-column{scroll-margin-top:20px}#china-five-a-map .mobile-detail-link{display:block;width:100%;border:0;border-top:1px solid var(--atlas-line);padding:14px 20px;background:var(--atlas-brand-soft);color:var(--atlas-brand);font-size:12px;font-family:inherit;cursor:pointer;text-align:left}#china-five-a-map .mobile-back-map{display:block;margin:0 23px 18px}#china-five-a-map .destination-nav{justify-content:flex-start}#china-five-a-map .destination-nav .locate-button{margin-left:12px}}
+@media(max-width:600px){#china-five-a-map .header-actions{gap:8px}#china-five-a-map .masthead-note{display:none}#china-five-a-map .filters{grid-template-columns:repeat(2,minmax(0,1fr))}#china-five-a-map .search-field{grid-column:1/-1}#china-five-a-map .filters>.field:nth-child(3){grid-column:1/-1}#china-five-a-map .hero{padding-top:21px}#china-five-a-map .explore-bar{gap:11px}#china-five-a-map .mark-segments{width:100%}#china-five-a-map .filter-summary{width:100%;justify-content:space-between;padding:0 2px}#china-five-a-map .filter-chips{gap:7px}#china-five-a-map .map-panel-head{padding-top:12px}#china-five-a-map .map-toolbar{align-items:center;gap:12px}#china-five-a-map .map-actions{margin-left:auto}#china-five-a-map .map-actions .zoom-button{width:32px;min-height:32px}#china-five-a-map .map-actions .reset-button{font-size:11px}#china-five-a-map .gesture-hint{font-size:9px}#china-five-a-map .action-toast{padding:11px 12px;gap:6px;font-size:11px}#china-five-a-map .toast-check{display:none}}
+@media(pointer:coarse){#china-five-a-map .mark-segments button,#china-five-a-map .map-actions .zoom-button,#china-five-a-map .destination-nav>.atlas-button{min-height:44px}#china-five-a-map .map-actions .zoom-button,#china-five-a-map .destination-nav>.atlas-button{min-width:40px}#china-five-a-map .search-result{min-height:52px}#china-five-a-map .text-button,#china-five-a-map .filter-chip{min-height:38px}}

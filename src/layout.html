@@ -1,0 +1,55 @@
+<div id="china-five-a-map" data-motion="off">
+  <style>__ATLAS_CSS__</style>
+  <header class="masthead">
+    <div class="brand"><span class="brand-seal" aria-hidden="true">山<br>河</span><div><span class="brand-title">山河印记</span><span class="brand-subtitle">CHINA · SCENIC ATLAS</span></div></div>
+    <div class="header-actions"><span class="masthead-note"><span class="live-dot" aria-hidden="true"></span>我的旅行图册</span><button type="button" class="atlas-button motion-toggle" id="c5a-motion" aria-pressed="false">动效已关闭</button></div>
+  </header>
+  <section class="hero" aria-label="中国5A景区地图">
+    <div><h1>看见山河，<em>记下向往。</em></h1><p>中国 5A 景区地图 · 循着风景探索，用标记收藏你的下一站。</p></div>
+    <div class="hero-index"><strong>358</strong><span>处国家 5A 景区<small>官方名录 · 2025.03.11</small></span></div>
+  </section>
+  <section class="filters" aria-label="景区筛选">
+    <label class="field"><span class="field-label">省区市<span class="field-number" aria-hidden="true">01</span></span><select class="control" id="c5a-province"><option value="">全国</option></select></label>
+    <label class="field"><span class="field-label">入选批次<span class="field-number" aria-hidden="true">02</span></span><select class="control" id="c5a-batch"><option value="">全部批次</option></select></label>
+    <label class="field"><span class="field-label">景区类型<span class="field-number" aria-hidden="true">03</span></span><select class="control" id="c5a-type"><option value="">全部类型</option></select></label>
+    <div class="field search-field"><label class="field-label" for="c5a-search">寻找下一站<kbd aria-label="按斜杠键开始搜索">/</kbd></label><div class="search-wrap"><span class="search-icon" aria-hidden="true"></span><input class="control" id="c5a-search" type="search" placeholder="搜索景区 / 省份" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="c5a-search-results"><button type="button" class="search-clear" id="c5a-search-clear" aria-label="清除搜索" hidden>×</button><div class="search-results" id="c5a-search-results" role="listbox" aria-label="搜索匹配的景区" hidden></div></div></div>
+  </section>
+  <div class="explore-bar"><div class="mark-segments" id="c5a-mark-filter" role="group" aria-label="按手动标记筛选"><span class="segment-indicator" aria-hidden="true"></span><button type="button" data-mark-scope="" aria-pressed="true">全部 <span>358</span></button><button type="button" data-mark-scope="marked" aria-pressed="false">已标记 <span>0</span></button><button type="button" data-mark-scope="unmarked" aria-pressed="false">未标记 <span>358</span></button></div><div class="filter-summary"><span id="c5a-filter-count" aria-live="polite">358 处风景待探索</span><button type="button" id="c5a-clear-filters" class="text-button">清空筛选</button></div></div>
+  <div class="filter-chips" id="c5a-filter-chips" aria-label="已应用的筛选条件" hidden></div>
+  <main class="atlas-layout">
+    <div class="map-column">
+      <section class="map-panel" aria-label="景区分布地图">
+        <div class="map-panel-head"><div class="map-title"><h2 id="c5a-region-label">全国 · 景区分布</h2><span class="eyebrow">EXPLORE THE MAP</span></div><label class="quick-toggle"><input type="checkbox" id="c5a-quick-mark"><span>点选即标记</span></label></div>
+        <div class="map-stage"><svg class="china-map" id="c5a-svg" role="img" aria-label="中国358家国家5A级旅游景区分布图。颜色和形状表示类型，朱砂色外圈表示手动标记。点击景区或使用景区名录可查看详情。"></svg><div class="compass" aria-hidden="true">N</div><div class="hover-label" id="c5a-hover"></div></div>
+        <div class="map-toolbar"><div><span class="map-count" id="c5a-count" aria-live="polite"></span><span class="gesture-hint">拖动平移 · Ctrl + 滚轮 / 双指缩放</span></div><div class="map-actions"><button type="button" class="atlas-button zoom-button" id="c5a-minus" aria-label="缩小地图">−</button><span class="zoom-level" id="c5a-zoom-level">1.0×</span><button type="button" class="atlas-button zoom-button" id="c5a-plus" aria-label="放大地图">＋</button><button type="button" class="atlas-button reset-button" id="c5a-reset">重置视图</button></div></div>
+        <div class="legend" id="c5a-legend" aria-label="景区类型和手动标记图例"></div>
+        <button type="button" class="mobile-detail-link" id="c5a-mobile-detail">查看景区档案 ↓</button>
+      </section>
+      <p class="mark-feedback" id="c5a-mark-feedback" role="status" aria-live="polite">点击景区探索详情，在景区档案中收藏心仪的目的地。</p>
+    </div>
+    <aside class="detail-area" aria-label="景区档案">
+      <div class="detail-masthead"><div><h2>景区档案</h2><p>DESTINATION NOTES</p></div><span class="grade-stamp" aria-label="国家5A级旅游景区">5A<small>CHINA</small></span></div>
+      <label class="field place-picker"><span class="field-label">景区名录<span class="field-number">选择目的地</span></span><select class="control" id="c5a-place"></select></label>
+      <div class="destination-nav"><button type="button" class="atlas-button" id="c5a-prev" aria-label="查看上一处景区">←</button><span id="c5a-place-position">1 / 358</span><button type="button" class="atlas-button" id="c5a-next" aria-label="查看下一处景区">→</button><button type="button" class="text-button locate-button" id="c5a-locate">地图定位 ↗</button></div>
+      <div class="detail-content" id="c5a-detail" aria-live="polite"></div>
+      <button type="button" class="mobile-back-map text-button" id="c5a-back-map">↑ 回到地图</button>
+    </aside>
+  </main>
+  <div class="bottom-notes">
+    <details class="note-section"><summary>标记保存与备份</summary>
+      <p id="c5a-storage-status">标记自动保存在当前浏览器中。</p>
+      <div class="mark-actions"><button type="button" class="atlas-button" id="c5a-export-marks">导出标记备份 ↗</button><button type="button" class="atlas-button" id="c5a-import-marks">导入标记备份</button><input type="file" id="c5a-import-file" accept="application/json,.json" hidden></div>
+      <p>更换浏览器、移动文件或清理浏览器数据前，可先导出备份；导入时会合并已有标记。</p>
+    </details>
+    <details class="note-section"><summary>资料口径与来源</summary>
+      <p>采用文旅部现行可核验名录，全国去重 358 家；名录标注截至 2025-03-11，检索核对 2026-09-16。壶口瀑布跨晋陕两省计 1 家；联合景区以一个代表点显示。港澳台未列入此名录。</p>
+      <p>“批次”以首次入选公布日期标识，不自行编造第几批编号。2024 年两批及 2020 年 1 月批次核对文旅部公告，其余日期参考公开汇编；官方评定年度另列。两条日期口径不一致的记录按官方年度展示，恢复等级另注。</p>
+      <p>六类类型按主要资源编辑归纳，综合景区可能兼具多类属性。简介依据各景区的文旅部知识库介绍压缩改写，每条附原文。点位来自公开坐标库，已修正明显错误；用于全国与省域分布概览，不表示景区边界或导航入口。</p>
+      <p class="source-links"><a href="https://sjfw.mct.gov.cn/site/dataservice/rural?type=10" target="_blank" rel="noopener noreferrer">文旅部官方名录 ↗</a><a href="https://zh.wikipedia.org/wiki/国家5A级旅游景区" target="_blank" rel="noopener noreferrer">历年批次汇编 ↗</a><a href="https://github.com/tuansuwu/china-5a-scenic-areas" target="_blank" rel="noopener noreferrer">坐标数据 ↗</a><a href="https://datav.aliyun.com/portal/school/atlas/area_selector" target="_blank" rel="noopener noreferrer">DataV 地图边界 ↗</a></p>
+      <p>坐标数据署名：Lore Routes，CC BY-SA 4.0；上游为 Wikipedia、Wikidata、OpenStreetMap contributors。地图为数据分布概览。</p>
+    </details>
+  </div>
+  <footer class="page-footer"><span>中国 5A 景区地图 · 名录截至 2025.03.11</span><span class="footer-phrase">山河辽阔，步履不停。</span></footer>
+  <div class="action-toast" id="c5a-toast" hidden><span class="toast-check" aria-hidden="true">✓</span><span id="c5a-toast-message" role="status" aria-live="polite"></span><button type="button" id="c5a-undo" hidden>撤销</button><button type="button" id="c5a-dismiss-toast" aria-label="关闭操作提示">×</button></div>
+</div>
+__MAP_SCRIPTS__

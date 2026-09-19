@@ -1,0 +1,14 @@
+{
+  "name": "shanhe-scenic-atlas",
+  "version": "1.0.0",
+  "private": true,
+  "description": "山河印记：中国5A景区离线互动地图",
+  "scripts": {
+    "build": "python build.py",
+    "test": "node tests/smoke.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  },
+  "engines": { "node": ">=20" }
+}
